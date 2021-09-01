@@ -1,0 +1,21 @@
+body {
+    background-color: #eeeeee;
+}
+
+#root {
+    display: block;
+    background-color: white;
+    width: 80%;
+    margin: 1em auto;
+    border-radius: 10px;
+    padding: 4em 3em;
+}
+
+header {
+    display: flex;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
