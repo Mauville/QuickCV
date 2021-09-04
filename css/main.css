@@ -1,21 +1,65 @@
 body {
-    background-color: #eeeeee;
+    background-color: #b8b8b8;
 }
 
 #root {
     display: block;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     width: 80%;
-    margin: 1em auto;
+    margin: 1em auto ;
     border-radius: 10px;
-    padding: 4em 3em;
+    padding: 4em 3em 0.5em 3em;
 }
+
 
 header {
     display: flex;
 }
 
+@media screen and (max-width: 800px) {
+    header {
+      display: flex;
+      flex-direction: column;
+      margin: 2em 0em;
+    }
+  }
+
+header #blurb{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.bodyItem{
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 1em 3em;
+}
+
+.bodyItem li{
+    list-style-position: inside;
+}
+
+.bodyItem h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bodyItem p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: left;
+    padding-left: 2em;
+}
+
 footer {
     display: flex;
     flex-direction: column;
+}
+
+.bodyItem h2{
+    font-family: Arial, Helvetica, sans-serif;
 }

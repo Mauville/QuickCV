@@ -1,3 +1,12 @@
+/*
+Laboratorio 1
+
+Oscar Antonio Becerril Lopez    A01332639
+Oscar Vargas Perez              A01657110
+
+*/
+
+
 'use strict';
 
 let Header = (props) => {
@@ -14,7 +23,7 @@ let Header = (props) => {
 
 let BodyItem = (props) => {
     return (
-        <div>
+        <div class="bodyItem">
             <h2 id="sectionTitle">{props.title}</h2>
             <p>{props.content}</p>
         </div>
@@ -36,13 +45,13 @@ let Body = (props) => {
 let Footer = (props) => {
     return (
         <div>
-            <BodyItem title="Contact Info"/>
             <footer>
+                <h2>Contact Info</h2>
                 <a href={"tel:".concat(props.cellphone)}>{props.cellphone}</a>
                 <a href={"mailto:".concat(props.mail)}>{props.mail}</a>
                 <a href={"https://" + props.github}>{props.github}</a>
                 <a href={"https://" + props.linkedin}>{props.linkedin}</a>
-                <p>Copyright {props.name}</p>
+                <p>Copyright {props.name} y Oscar Becerril</p>
             </footer>
         </div>
     )

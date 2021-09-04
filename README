@@ -1,2 +1,10 @@
 >Using pure HTML and CSS
 >In 2021
+
+
+If an CORS error is experienced, set privacy.file_unique_origin flag to false in Mozila firefox explorer
+as stated in https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp
+
+
+Oscar Antonio Becerril Lopez    A01332639
+Oscar Vargas Perez              A01657110
