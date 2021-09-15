@@ -10,14 +10,78 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" ></script>
-    <script src="reactcv.js" type="text/babel" ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="reactcv.js" type="text/babel"></script>
 </head>
 
 <body>
+<div id="sidebar">
+    <div class='dropdown'>
+        <div class='title pointerCursor'>Go To Section</div>
+
+        <div class='menu pointerCursor hide'>
+            <div class='option' id='Biography'>Biography</div>
+            <div class='option' id='Education'>Education</div>
+            <div class='option' id='Job'>Job Experience</div>
+            <div class='option' id='Abilities'>Abilities</div>
+            <div class='option' id='Schedule'>Schedule</div>
+            <div class='option' id='Contact'>Contact Info</div>
+        </div>
+    </div>
+</div>
 
 <div id="root"></div>
 </body>
 
+<script>
+
+    function toggleClass(elem, className) {
+        if (elem.className.indexOf(className) !== -1) {
+            elem.className = elem.className.replace(className, '');
+        } else {
+            elem.className = elem.className.replace(/\s+/g, ' ') + ' ' + className;
+        }
+
+        return elem;
+    }
+
+    function toggleMenuDisplay(e) {
+        const dropdown = e.currentTarget.parentNode;
+        const menu = dropdown.querySelector('.menu');
+
+        toggleClass(menu, 'hide');
+    }
+
+    function handleOptionSelected(e) {
+        console.log(e.target)
+        toggleClass(e.target.parentNode, 'hide');
+
+        const id = e.target.id;
+        console.log("The target is" + id)
+        const newValue = e.target.textContent + ' ';
+        const titleElem = document.querySelector('.dropdown .title');
+        const icon = document.querySelector('.dropdown .title .fa');
+
+
+        titleElem.textContent = newValue;
+
+        const sel = "." + e.target.id;
+        const result = document.querySelector(sel);
+        console.log(sel)
+        result.scrollIntoView()
+    }
+
+    //get elements
+    const dropdownTitle = document.querySelector('.dropdown .title');
+    const dropdownOptions = document.querySelectorAll('.dropdown .option');
+
+    //bind listeners to these elements
+    dropdownTitle.addEventListener('click', toggleMenuDisplay);
+
+    dropdownOptions.forEach(option => option.addEventListener('click', handleOptionSelected));
+</script>
+
+<style>
+</style>
 
 </html>

@@ -12,7 +12,7 @@ Oscar Vargas Perez              A01657110
 let Header = (props) => {
     return (
         <header>
-            <img id="profile_pic" src="img/icon.png"/>
+            <img alt="profile" id="profile_pic" src="img/icon.png"/>
             <div id="blurb">
                 <h1>{props.name}</h1>
                 <q>{props.phrase}</q>
@@ -23,7 +23,7 @@ let Header = (props) => {
 
 let BodyItem = (props) => {
     return (
-        <div class="bodyItem">
+        <div className={"bodyItem " + props.sectid}>
             <h2 id="sectionTitle">{props.title}</h2>
             <p>{props.content}</p>
         </div>
@@ -31,168 +31,168 @@ let BodyItem = (props) => {
 
 }
 let Body = (props) => {
-    let compAbilities = props.abilities.map((d) => <li>{d}</li>);
+    let compAbilities = props.abilities.map((d) => <li key={d}>{d}</li>);
     return (
         <div>
-            <BodyItem title="Biography" content={props.bio}/>
-            <BodyItem title="Education" content={props.education}/>
-            <BodyItem title="Job Experience" content={props.jobExperience}/>
-            <BodyItem title="Abilities" content={compAbilities}/>
-            
-            <div class="schedule bodyItem">
-                <h2>Schedule</h2>
-                <table class="tg">
+            <BodyItem title="Biography" sectid="Biography" content={props.bio}/>
+            <BodyItem title="Education" sectid="Education" content={props.education}/>
+            <BodyItem title="Job Experience"sectid="Job"  content={props.jobExperience}/>
+            <BodyItem title="Abilities" sectid="Abilities" content={compAbilities}/>
+
+            <div className="Schedule bodyItem">
+                <h2 id="Schedule">Schedule</h2>
+                <table className="tg">
                     <tbody>
-                        <tr>
-                            <td class="tg-0pky">7:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">8:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">9:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">10:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">11:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">12:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">13:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">14:00</td>
-                            <td class="tg-0pky"></td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0pky">15:00</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky">Clases</td>
-                            <td class="tg-0pky"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax">16:00</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax">Clases</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax">Clases</td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax">17:00</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax">18:00</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax">19:00</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax">20:00</td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax">Domingo</td>
-                            <td class="tg-0lax">Lunes</td>
-                            <td class="tg-0lax">Martes</td>
-                            <td class="tg-0lax">Miercoles</td>
-                            <td class="tg-0lax">Jueves</td>
-                            <td class="tg-0lax">Viernes</td>
-                            <td class="tg-0lax">Sabado</td>
-                        </tr>
+                    <tr>
+                        <td className="tg-0pky">7:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">8:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">9:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">10:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">11:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">12:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">13:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">14:00</td>
+                        <td className="tg-0pky"/>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0pky">15:00</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky">Clases</td>
+                        <td className="tg-0pky"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax">16:00</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax">Clases</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax">Clases</td>
+                        <td className="tg-0lax"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax">17:00</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax">18:00</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax">19:00</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax">20:00</td>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax"/>
+                    </tr>
+                    <tr>
+                        <td className="tg-0lax"/>
+                        <td className="tg-0lax">Domingo</td>
+                        <td className="tg-0lax">Lunes</td>
+                        <td className="tg-0lax">Martes</td>
+                        <td className="tg-0lax">Miercoles</td>
+                        <td className="tg-0lax">Jueves</td>
+                        <td className="tg-0lax">Viernes</td>
+                        <td className="tg-0lax">Sabado</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -203,7 +203,7 @@ let Footer = (props) => {
     return (
         <div>
             <footer>
-                <h2>Contact Info</h2>
+                <h2 className="Contact" >Contact Info</h2>
                 <a href={"tel:".concat(props.cellphone)}>{props.cellphone}</a>
                 <a href={"mailto:".concat(props.mail)}>{props.mail}</a>
                 <a href={"https://" + props.github}>{props.github}</a>
@@ -213,6 +213,7 @@ let Footer = (props) => {
         </div>
     )
 }
+
 let CV = (props) => {
     let person = props.person
     return (
