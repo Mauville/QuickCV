@@ -196,6 +196,14 @@ let Body = (props) => {
                     </tbody>
                 </table>
             </div>
+
+            <div class="bodyItem">
+                <h2>
+                    Temporizador a Graduación
+                </h2>
+                <p id="temporizador"></p>
+            </div>
+
         </div>
     )
 }
@@ -251,4 +259,33 @@ ReactDOM.render(
     <CV person={student}/>,
     document.getElementById('root')
 );
+
+
+// Conseguir el dia objetivo
+var objectiveTime = new Date("Aug 23, 2022 18:00:00").getTime();
+
+//Funcion para caluculo y formato del elemento HTML cada segundo
+var t = setInterval(function() {
+    // Obtener el tiempo actual
+    var currentTime = new Date().getTime();
+
+    // Diferencia entre el dia objetivo y el tiempo actual
+    var d = objectiveTime - currentTime
+
+    // Parseo del tiempo d a un formato legible por un humano
+    var days = Math.floor(d/(1000*60*60*24));
+    var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((d % (1000 * 60)) / 1000);
+
+    // Modificacion del DOM de la pagina con la informacion obtenida en el calculo anterior
+    document.getElementById("temporizador").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+    
+    // Condicional para asegurar que unicamente se cambie la informacion en pantalla cuando se cumpla el intervalo deseado
+    if (d < 0) {
+        clearInterval(x);
+        document.getElementById("temporizador").innerHTML = "EXPIRED";
+     }
+        
+    }, 1000);
 
