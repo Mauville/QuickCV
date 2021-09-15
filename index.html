@@ -35,6 +35,7 @@
 
 <script>
 
+    // Simula funcion de JQuery. Hace toggle de una clase
     function toggleClass(elem, className) {
         if (elem.className.indexOf(className) !== -1) {
             elem.className = elem.className.replace(className, '');
@@ -45,26 +46,23 @@
         return elem;
     }
 
+    // Esconde el menu
     function toggleMenuDisplay(e) {
         const dropdown = e.currentTarget.parentNode;
         const menu = dropdown.querySelector('.menu');
-
         toggleClass(menu, 'hide');
     }
 
+    // Funcion para manerar seleccionado.
     function handleOptionSelected(e) {
-        console.log(e.target)
-        toggleClass(e.target.parentNode, 'hide');
 
-        const id = e.target.id;
-        console.log("The target is" + id)
+        //Cierra el Menu
+        toggleClass(e.target.parentNode, 'hide');
         const newValue = e.target.textContent + ' ';
         const titleElem = document.querySelector('.dropdown .title');
-        const icon = document.querySelector('.dropdown .title .fa');
-
-
         titleElem.textContent = newValue;
 
+        // navega hacia la seccion requerida
         const sel = "." + e.target.id;
         const result = document.querySelector(sel);
         console.log(sel)
